@@ -189,6 +189,16 @@ export async function POST(req: NextRequest) {
   } catch (error: unknown) {
     console.error("Chat API error:", error);
 
+    if (error instanceof TypeError) {
+      return NextResponse.json(
+        {
+          error:
+            "Could not reach the Gemini API. Check your internet connection, API key, and whether the Gemini endpoint is accessible from this machine.",
+        },
+        { status: 502 }
+      );
+    }
+
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Internal server error" },
       { status: 500 }
