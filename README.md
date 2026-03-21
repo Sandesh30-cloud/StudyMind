@@ -87,6 +87,7 @@ Open `.env.local` and add your Gemini API key:
 
 ```env
 GEMINI_API_KEY=AIza-your-key-here
+GEMINI_MODEL=
 ```
 
 ### 3. Run in development
@@ -95,7 +96,11 @@ GEMINI_API_KEY=AIza-your-key-here
 npm run dev
 ```
 
+
 Open [http://localhost:3000](http://localhost:3000) — you should see the StudyMind welcome screen.
+
+![Screenshot](studymind.png)
+
 
 ### 4. Build for production
 
